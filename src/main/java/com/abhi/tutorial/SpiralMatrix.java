@@ -17,13 +17,16 @@ public class SpiralMatrix {
         boolean goDown = false;
         boolean goUp = false;
         Set<String> visited = new HashSet<>();
-        while (visited.size() <= rows * cols) {
+        while (visited.size() < rows * cols) {
             String position = String.valueOf(presentRow) + String.valueOf(presentCol);
             if (goRight) {
                 if (presentCol >= cols || visited.contains(position)) {
                     goRight = false;
                     goDown = true;
                     presentRow++;
+                    if (presentCol >= cols) {
+                        presentCol--;
+                    }
                 }
                 else {
                     if (!visited.contains(position) && presentRow >= 0 && presentRow < rows && presentCol >= 0 && presentCol < cols) {
@@ -44,6 +47,9 @@ public class SpiralMatrix {
                     goDown = false;
                     goLeft = true;
                     presentCol--;
+                    if (presentRow >= rows) {
+                        presentRow--;
+                    }
                 }
                 else {
                     if (!visited.contains(position) && presentRow >= 0 && presentRow < rows && presentCol >= 0 && presentCol < cols) {
@@ -60,10 +66,13 @@ public class SpiralMatrix {
                 continue;
             }
             if (goLeft) {
-                if (presentCol <= 0 || visited.contains(position)) {
+                if (presentCol < 0 || visited.contains(position)) {
                     goLeft = false;
                     goUp = true;
                     presentRow--;
+                    if (presentCol < 0) {
+                        presentCol++;
+                    }
                 }
                 else {
                    if (!visited.contains(position) && presentRow >= 0 && presentRow < rows && presentCol >= 0 && presentCol < cols) {
@@ -80,10 +89,13 @@ public class SpiralMatrix {
                 continue;
             }
             if (goUp) {
-                if (presentRow <= 0 || visited.contains(position)) {
+                if (presentRow < 0 || visited.contains(position)) {
                     goUp = false;
                     goRight = true;
                     presentCol++;
+                    if (presentRow < 0) {
+                        presentRow++;
+                    }
                 }
                 else {
                     if (!visited.contains(position) && presentRow >= 0 && presentRow < rows && presentCol >= 0 && presentCol < cols) {
