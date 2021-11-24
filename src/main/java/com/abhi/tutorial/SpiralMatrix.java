@@ -24,9 +24,7 @@ public class SpiralMatrix {
                     goRight = false;
                     goDown = true;
                     presentRow++;
-                    if (presentCol >= cols) {
-                        presentCol--;
-                    }
+                    presentCol--;
                 }
                 else {
                     if (!visited.contains(position) && presentRow >= 0 && presentRow < rows && presentCol >= 0 && presentCol < cols) {
@@ -47,9 +45,7 @@ public class SpiralMatrix {
                     goDown = false;
                     goLeft = true;
                     presentCol--;
-                    if (presentRow >= rows) {
-                        presentRow--;
-                    }
+                    presentRow--;
                 }
                 else {
                     if (!visited.contains(position) && presentRow >= 0 && presentRow < rows && presentCol >= 0 && presentCol < cols) {
@@ -70,9 +66,7 @@ public class SpiralMatrix {
                     goLeft = false;
                     goUp = true;
                     presentRow--;
-                    if (presentCol < 0) {
-                        presentCol++;
-                    }
+                    presentCol++;
                 }
                 else {
                    if (!visited.contains(position) && presentRow >= 0 && presentRow < rows && presentCol >= 0 && presentCol < cols) {
@@ -93,9 +87,7 @@ public class SpiralMatrix {
                     goUp = false;
                     goRight = true;
                     presentCol++;
-                    if (presentRow < 0) {
-                        presentRow++;
-                    }
+                    presentRow++;
                 }
                 else {
                     if (!visited.contains(position) && presentRow >= 0 && presentRow < rows && presentCol >= 0 && presentCol < cols) {
@@ -117,7 +109,7 @@ public class SpiralMatrix {
     }
 
     public static void main(String[] args) {
-        int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
+        int[][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
         List<Integer> result = spiralOrder(matrix);
         result.forEach(System.out::println);
     }
