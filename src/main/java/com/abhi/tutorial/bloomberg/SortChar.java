@@ -1,4 +1,4 @@
-package com.abhi.tutorial;
+package com.abhi.tutorial.bloomberg;
 
 import java.util.Collections;
 import java.util.HashMap;

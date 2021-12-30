@@ -1,4 +1,4 @@
-package com.abhi.tutorial;
+package com.abhi.tutorial.bloomberg;
 
 public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {
