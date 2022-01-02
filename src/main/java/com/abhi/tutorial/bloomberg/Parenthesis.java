@@ -1,25 +1,26 @@
 package com.abhi.tutorial.bloomberg;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Parenthesis {
     public static boolean isValid(String s) {
         boolean  isUnbalanced = false;
         char[] in = s.toCharArray();
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new ArrayDeque<>();
         for (char present : in) {
             if (present == '(' || present == '{' || present == '[') {
                 stack.push(present);
             } else {
-                if (present == ')' && !stack.empty() && stack.peek() == '(') {
+                if (present == ')' && stack.peekFirst() != null && stack.peekFirst() == '(') {
                     stack.pop();
                     continue;
                 }
-                if (present == '}' && !stack.empty() && stack.peek() == '{') {
+                if (present == '}' && stack.peekFirst() != null && stack.peekFirst() == '{') {
                     stack.pop();
                     continue;
                 }
-                if (present == ']' && !stack.empty() && stack.peek() == '[') {
+                if (present == ']' && stack.peekFirst() != null && stack.peekFirst() == '[') {
                     stack.pop();
                 }
                 else {
