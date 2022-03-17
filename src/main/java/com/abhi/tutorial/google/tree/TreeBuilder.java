@@ -2,6 +2,8 @@ package com.abhi.tutorial.google.tree;
 
 import com.abhi.tutorial.google.model.TreeNode;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.List;
 
 public class TreeBuilder {
@@ -12,28 +14,27 @@ public class TreeBuilder {
         this.nodes = nodes;
     }
 
-    public TreeNode buildTree() {
-        TreeNode root = null;
-        if (nodes.size() == 0) {
-            return root;
-        } else {
-            root = new TreeNode(nodes.get(0));
-        }
-        TreeNode travel = root;
-        int nodeCounter = 0;
-        for (int i = 0; i < nodes.size(); i++) {
-            if (nodes.get(i) != null) {
-                int rightIndex = 2 * nodeCounter + 1;
-                int leftIndex = 2 * nodeCounter + 2;
-                if (nodes.get(rightIndex) != null) {
-                    travel.setRight(new TreeNode(nodes.get(rightIndex)));
-                }
-                if (nodes.get(leftIndex) != null) {
-                    travel.setLeft(new TreeNode(nodes.get(leftIndex)));
-                }
-                nodeCounter++;
-            }
-        }
-        return root;
-    }
+//    public TreeNode buildTree() {
+//        Deque<TreeNode> queue = new ArrayDeque<>();
+//        for (Integer node : nodes) {
+//            if (node != null) {
+//                TreeNode treeNode = new TreeNode(node);
+//                queue.offer(treeNode);
+//            } else {
+//                TreeNode nullNode = new TreeNode(Integer.MIN_VALUE);
+//                queue.offer(nullNode);
+//            }
+//        }
+//
+//        TreeNode root = null;
+//        if (!queue.isEmpty()) {
+//            root = queue.getFirst();
+//        }
+//
+//        TreeNode node = null;
+//        while (!queue.isEmpty()) {
+//            node = queue.remove();
+//
+//        }
+//    }
 }
