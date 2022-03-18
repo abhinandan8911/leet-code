@@ -1,6 +1,6 @@
-package com.abhi.tutorial.google.tree;
+package com.abhi.tutorial.tree.tree;
 
-import com.abhi.tutorial.google.model.TreeNode;
+import com.abhi.tutorial.tree.model.TreeNode;
 
 public class TreeBuilder {
 

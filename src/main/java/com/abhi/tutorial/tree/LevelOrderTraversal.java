@@ -1,6 +1,6 @@
-package com.abhi.tutorial.google;
+package com.abhi.tutorial.tree;
 
-import com.abhi.tutorial.google.model.TreeNode;
+import com.abhi.tutorial.tree.model.TreeNode;
 
 import java.util.*;
 

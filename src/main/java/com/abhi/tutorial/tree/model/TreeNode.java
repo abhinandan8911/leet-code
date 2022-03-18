@@ -1,4 +1,4 @@
-package com.abhi.tutorial.google.model;
+package com.abhi.tutorial.tree.model;
 
 public class TreeNode {
     public int val;

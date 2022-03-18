@@ -1,8 +1,8 @@
-package com.abhi.tutorial.google;
+package com.abhi.tutorial.tree;
 
 // https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/928/
 
-import com.abhi.tutorial.google.model.TreeNode;
+import com.abhi.tutorial.tree.model.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

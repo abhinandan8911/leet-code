@@ -1,7 +1,7 @@
-package com.abhi.tutorial.google;
+package com.abhi.tutorial.tree;
 
-import com.abhi.tutorial.google.model.TreeNode;
-import com.abhi.tutorial.google.tree.TreeBuilder;
+import com.abhi.tutorial.tree.model.TreeNode;
+import com.abhi.tutorial.tree.tree.TreeBuilder;
 
 import java.util.*;
 
