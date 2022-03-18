@@ -16,9 +16,9 @@ public class PreOrderTraversal {
         if (root == null) {
             return values;
         }
-        values.add(root.getVal());
-        preTravel(root.getLeft(), values);
-        preTravel(root.getRight(), values);
+        values.add(root.val);
+        preTravel(root.left, values);
+        preTravel(root.right, values);
         return values;
     }
 }

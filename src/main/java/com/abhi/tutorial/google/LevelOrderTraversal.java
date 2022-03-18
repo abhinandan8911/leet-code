@@ -25,12 +25,12 @@ public class LevelOrderTraversal {
                 TreeNode node = queue.remove();
 
                 // fulfill the current level
-                levels.get(level).add(node.getVal());
+                levels.get(level).add(node.val);
 
                 // add child nodes of the current level
                 // in the queue for the next level
-                if (node.getLeft() != null) queue.add(node.getLeft());
-                if (node.getRight() != null) queue.add(node.getRight());
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
             }
             // go to next level
             level++;

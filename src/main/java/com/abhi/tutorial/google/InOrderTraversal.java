@@ -15,9 +15,9 @@ public class InOrderTraversal {
 
     private List<Integer> traversal(TreeNode root, ArrayList<Integer> values) {
         if (root != null) {
-            traversal(root.getLeft(), values);
-            values.add(root.getVal());
-            traversal(root.getRight(), values);
+            traversal(root.left, values);
+            values.add(root.val);
+            traversal(root.right, values);
         }
         return values;
     }

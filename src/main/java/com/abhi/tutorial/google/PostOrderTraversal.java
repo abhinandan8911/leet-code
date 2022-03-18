@@ -15,9 +15,9 @@ public class PostOrderTraversal {
 
     private List<Integer> traversal(TreeNode root, ArrayList<Integer> integers) {
         if (root != null) {
-            traversal(root.getLeft(), integers);
-            traversal(root.getRight(), integers);
-            integers.add(root.getVal());
+            traversal(root.left, integers);
+            traversal(root.right, integers);
+            integers.add(root.val);
         }
         return integers;
     }
