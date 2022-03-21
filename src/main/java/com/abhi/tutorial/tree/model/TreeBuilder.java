@@ -1,4 +1,4 @@
-package com.abhi.tutorial.tree.tree;
+package com.abhi.tutorial.tree.model;
 
 import com.abhi.tutorial.tree.model.TreeNode;
 
