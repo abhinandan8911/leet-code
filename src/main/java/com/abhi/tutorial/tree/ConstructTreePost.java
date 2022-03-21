@@ -8,7 +8,7 @@ import java.util.Map;
 
 // https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/942/
 
-public class ConstructTree {
+public class ConstructTreePost {
     int post_idx;
     int[] postorder;
     int[] inorder;
