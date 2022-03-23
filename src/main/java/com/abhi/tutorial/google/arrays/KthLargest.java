@@ -8,8 +8,9 @@ import java.util.Collections;
 
 public class KthLargest {
     public int findKthLargest(int[] nums, int k) {
-        int[] sorted = Arrays.stream(nums).boxed().sorted(Collections.reverseOrder()).mapToInt(Integer::intValue).toArray();
-        return sorted[k-1];
+//        int[] sorted = Arrays.stream(nums).boxed().sorted(Collections.reverseOrder()).mapToInt(Integer::intValue).toArray();
+        Arrays.sort(nums);
+        return nums[nums.length - k];
     }
 
     public static void main(String[] args) {
