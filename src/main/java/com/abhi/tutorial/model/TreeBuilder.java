@@ -1,6 +1,4 @@
-package com.abhi.tutorial.tree.model;
-
-import com.abhi.tutorial.tree.model.TreeNode;
+package com.abhi.tutorial.model;
 
 public class TreeBuilder {
 

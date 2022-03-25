@@ -1,6 +1,6 @@
 package com.abhi.tutorial.google.trees;
 
-import com.abhi.tutorial.tree.model.TreeNode;
+import com.abhi.tutorial.model.TreeNode;
 
 
 // https://leetcode.com/explore/interview/card/google/61/trees-and-graphs/3067/

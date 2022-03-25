@@ -1,7 +1,5 @@
 package com.abhi.tutorial.tree;
 
-import com.abhi.tutorial.tree.model.TreeNode;
-
 public class LowestCommonAncestor {
 
 //    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

@@ -1,6 +1,6 @@
 package com.abhi.tutorial.tree;
 
-import com.abhi.tutorial.tree.model.TreeNode;
+import com.abhi.tutorial.model.TreeNode;
 
 
 // https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/537/

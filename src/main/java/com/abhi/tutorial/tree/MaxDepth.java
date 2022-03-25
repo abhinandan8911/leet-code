@@ -2,7 +2,7 @@ package com.abhi.tutorial.tree;
 
 // https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/535/
 
-import com.abhi.tutorial.tree.model.TreeNode;
+import com.abhi.tutorial.model.TreeNode;
 
 public class MaxDepth {
 

@@ -1,4 +1,4 @@
-package com.abhi.tutorial.tree.model;
+package com.abhi.tutorial.model;
 
 public class TreeNode {
     public int val;

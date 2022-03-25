@@ -1,6 +1,6 @@
 package com.abhi.tutorial.tree;
 
-import com.abhi.tutorial.tree.model.TreeNode;
+import com.abhi.tutorial.model.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
