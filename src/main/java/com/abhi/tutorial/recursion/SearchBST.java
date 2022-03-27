@@ -5,7 +5,7 @@ package com.abhi.tutorial.recursion;
 
 import com.abhi.tutorial.model.TreeNode;
 
-public class BST {
+public class SearchBST {
     public TreeNode searchBST(TreeNode root, int val) {
         if (root == null) {
             return null;
