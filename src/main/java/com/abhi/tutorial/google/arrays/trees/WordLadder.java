@@ -1,4 +1,4 @@
-package com.abhi.tutorial.google.trees;
+package com.abhi.tutorial.google.arrays.trees;
 
 import java.util.*;
 
