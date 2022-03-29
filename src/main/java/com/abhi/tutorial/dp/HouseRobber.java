@@ -21,7 +21,9 @@ public class HouseRobber {
         if (pos == 1) {
             return Math.max(nums[0], nums[1]);
         }
-        cache.put(pos, Math.max(nums[pos] + robValueAt(nums, pos - 2), robValueAt(nums, pos - 1)));
+        if (!cache.containsKey(pos)) {
+            cache.put(pos, Math.max(nums[pos] + robValueAt(nums, pos - 2), robValueAt(nums, pos - 1)));
+        }
         return cache.get(pos);
     }
 
