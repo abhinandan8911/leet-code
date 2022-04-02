@@ -1,36 +1,45 @@
 package com.abhi.tutorial.graph;
 
+import java.util.*;
+
+// https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3910/
+
 public class GraphValidTree {
 
     public boolean validTree(int n, int[][] edges) {
-        if (n > 1 && edges.length == 0) {
+        if (edges.length != n - 1) {
             return false;
         }
-        int[] set = new int[n];
+        List<List<Integer>> adjList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            set[i] = i;
+            adjList.add(new ArrayList<>());
         }
 
         for (int[] edge : edges) {
-            int parent = edge[0];
-            int child = edge[1];
-            if (set[child] == child) {
-                set[child] = parent;
-            } else {
-                return false;
-            }
+            adjList.get(edge[0]).add(edge[1]);
+            adjList.get(edge[1]).add(edge[0]);
         }
 
-        for (int i = 1; i < n - 1; i++) {
-            if (set[i] == i) {
-                return false;
+        Set<Integer> visited = new HashSet<>();
+
+        Queue<Integer> queue = new ArrayDeque<>();
+        queue.add(0);
+        visited.add(0);
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            for (int adjNode : adjList.get(node)) {
+                if (!visited.contains(adjNode)) {
+                    visited.add(adjNode);
+                    queue.add(adjNode);
+                }
             }
         }
-        return true;
+        return visited.size() == n;
     }
 
     public static void main(String[] args) {
         int[][] edges = {{0,1}, {1,2}, {2,3}, {1,3}, {1,4}};
+//        int[][] edges = {{0,1}, {0,2}, {0,3}, {1,4}};
         System.out.println((new GraphValidTree()).validTree(5, edges));
     }
 }
