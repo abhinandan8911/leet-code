@@ -22,14 +22,17 @@ public class BFSFindPathExists {
         Queue<Integer> queue = new ArrayDeque<>();
         Set<Integer> visited = new HashSet<>();
         queue.add(source);
+        visited.add(source);
         while (!queue.isEmpty()) {
             int node = queue.poll();
             if (node == destination) {
                 return true;
             }
-            if (!visited.contains(node)) {
-                visited.add(node);
-                queue.addAll(adjList.get(node));
+            for (int adjNode : adjList.get(node)) {
+                if (!visited.contains(adjNode)) {
+                    visited.add(adjNode);
+                    queue.add(adjNode);
+                }
             }
         }
         return false;
