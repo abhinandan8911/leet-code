@@ -1,4 +1,4 @@
-package com.abhi.tutorial.google.arrays.trees;
+package com.abhi.tutorial.google.trees;
 
 import com.abhi.tutorial.model.TreeNode;
 
