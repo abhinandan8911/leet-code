@@ -12,13 +12,16 @@ public class LowestCommonAncestor {
             return null;
         }
         if (isTreeParent(root, p) && isTreeParent(root, q)) {
+            if (root.val == p.val || root.val == q.val) {
+                return root;
+            }
             TreeNode left = root.left;
             TreeNode right = root.right;
             if (isTreeParent(left, p) && isTreeParent(left, q)) {
-                lowestCommonAncestor(left, p, q);
+                return lowestCommonAncestor(left, p, q);
             }
             if (isTreeParent(right, p) && isTreeParent(right, q)) {
-                lowestCommonAncestor(right, p, q);
+                return lowestCommonAncestor(right, p, q);
             }
         }
         return root;
