@@ -3,6 +3,8 @@ package com.abhi.tutorial.tree;
 
 // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 
+
+// This is for non BST
 import com.abhi.tutorial.model.TreeNode;
 
 public class LowestCommonAncestor {
