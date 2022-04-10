@@ -3,7 +3,7 @@ package com.abhi.tutorial.google.trie;
 // https://leetcode.com/problems/design-add-and-search-words-data-structure/
 
 
-// Use DFS - solution is not correct
+// Use DFS
 import java.util.*;
 
 public class WordDictionary {
@@ -26,55 +26,28 @@ public class WordDictionary {
     }
 
     public boolean search(String word) {
+        return searchInRoot(word, root);
+    }
+
+    private boolean searchInRoot(String word, LetterNode root) {
         LetterNode search = root;
-        Collection<LetterNode> possible = new HashSet<>();
-        for (char ch : word.toCharArray()) {
-            if (ch != '.') {
-                if (!possible.isEmpty()) {
-                    boolean found = false;
-                    for (LetterNode node : possible) {
-                        if (node.node.containsKey(ch)) {
-                            search = node.node.get(ch);
-                            found = true;
-                            break;
-                        }
+        for (int i = 0; i < word.length(); i++) {
+            char ch = word.charAt(i);
+            if (ch == '.') {
+                for (LetterNode node :search.node.values()) {
+                    if (searchInRoot(word.substring(i + 1), node)) {
+                        return true;
                     }
-                    if (!found) {
-                        return false;
-                    }
-                    possible.clear();
-                    continue;
                 }
+                return false;
+            } else {
                 if (!search.node.containsKey(ch)) {
                     return false;
                 }
                 search = search.node.get(ch);
-            } else {
-                if (search.isEnd) {
-                    return false;
-                }
-                if (possible.isEmpty()) {
-                    possible.addAll(search.node.values());
-                } else {
-                    Collection<LetterNode> next = new HashSet<>();
-                    for (LetterNode node : possible) {
-                        next.addAll(node.node.values());
-                    }
-                    possible.clear();
-                    possible.addAll(next);
-                }
             }
         }
-        if (possible.isEmpty()) {
-            return search.isEnd;
-        }
-
-        for (LetterNode node : possible) {
-            if (node.isEnd) {
-                return true;
-            }
-        }
-        return false;
+        return search.isEnd;
     }
 
     public static class LetterNode {
