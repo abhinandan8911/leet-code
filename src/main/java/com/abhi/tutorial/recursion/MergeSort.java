@@ -48,7 +48,6 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] input = {5,2,3,1};
         int[] result = (new MergeSort()).sortArray(input);
-        String out = Arrays.stream(result).boxed().map(String::valueOf).collect(Collectors.joining( ", "));
-        System.out.println(out);
+        System.out.println(Arrays.toString(result));
     }
 }
