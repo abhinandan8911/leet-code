@@ -1,6 +1,6 @@
 package com.abhi.tutorial.tree;
 
-// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 
 import com.abhi.tutorial.model.TreeNode;
 
