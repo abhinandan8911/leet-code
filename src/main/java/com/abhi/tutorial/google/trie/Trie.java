@@ -16,11 +16,11 @@ public class Trie {
     public void insert(String word) {
         TrieNode node = root;
         char[] chars = word.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            if (!node.nodeMap.containsKey(chars[i])) {
-                node.nodeMap.put(chars[i], new TrieNode());
+        for (char aChar : chars) {
+            if (!node.nodeMap.containsKey(aChar)) {
+                node.nodeMap.put(aChar, new TrieNode());
             }
-            node = node.nodeMap.get(chars[i]);
+            node = node.nodeMap.get(aChar);
         }
         node.isEnd = true;
     }
