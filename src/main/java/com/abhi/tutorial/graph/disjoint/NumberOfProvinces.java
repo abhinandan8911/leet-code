@@ -1,4 +1,4 @@
-package com.abhi.tutorial.graph;
+package com.abhi.tutorial.graph.disjoint;
 
 import java.util.HashSet;
 import java.util.Set;

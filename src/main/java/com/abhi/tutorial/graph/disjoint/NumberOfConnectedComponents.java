@@ -1,4 +1,4 @@
-package com.abhi.tutorial.graph;
+package com.abhi.tutorial.graph.disjoint;
 
 // https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3911/
 
