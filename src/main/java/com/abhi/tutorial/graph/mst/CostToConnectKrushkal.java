@@ -7,7 +7,7 @@ import java.util.List;
 
 // https://leetcode.com/explore/learn/card/graph/621/algorithms-to-construct-minimum-spanning-tree/3857/
 
-public class CostToConnectAllPoints {
+public class CostToConnectKrushkal {
     public int minCostConnectPoints(int[][] points) {
         int n = points.length;
         List<int[]> adjList = new ArrayList<>();
@@ -79,7 +79,7 @@ public class CostToConnectAllPoints {
 
     public static void main(String[] args) {
         int[][] points = {{2,-3},{-17,-8},{13,8},{-17,-15}};
-        CostToConnectAllPoints cost = new CostToConnectAllPoints();
+        CostToConnectKrushkal cost = new CostToConnectKrushkal();
         System.out.println(cost.minCostConnectPoints(points));
     }
 }
