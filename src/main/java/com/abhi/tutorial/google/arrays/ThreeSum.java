@@ -9,20 +9,28 @@ import java.util.stream.Collectors;
 public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        Set<List<Integer>> counted = new HashSet<>();
-        for (int i = 0; i < nums.length; i++) {
-            int target = -nums[i];
-            for (int j = i + 1; j < nums.length; j++) {
-                int first = nums[j];
-                for (int k = j + 1; k < nums.length; k++) {
-                    if (nums[k] + first == target) {
-                        List<Integer> list = Arrays.asList(nums[i], nums[j], nums[k]);
-                        list.sort(Integer::compareTo);
-                        if (!counted.contains(list)) {
-                            result.add(Arrays.asList(nums[i], nums[j], nums[k]));
-                            counted.add(list);
-                        }
+        int len = nums.length;
+        Arrays.sort(nums);
+        for(int i = 0; i < len - 1; i++) {
+            if (i > 0 && nums[i - 1] == nums[i]) {
+                continue;
+            }
+            int first = nums[i];
+            int target = -first;
+            int lo = i + 1;
+            int hi = len - 1;
+            while(lo < hi) {
+                if (nums[lo] + nums[hi] == target) {
+                    List<Integer> val = Arrays.asList(first, nums[lo], nums[hi]);
+                    result.add(val);
+                    lo++;
+                    while(nums[lo] == nums[lo - 1] && lo < hi) {
+                        lo++;
                     }
+                } else if (target > nums[lo] + nums[hi]) {
+                    lo++;
+                } else {
+                    hi--;
                 }
             }
         }
